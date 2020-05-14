@@ -12,7 +12,7 @@ router.post('/sign-in', controllers.signIn)
 
 //read data
 router.get('/products', controllers.getProducts)
-router.get('/product', controllers.getProduct)
+router.get('/products/:id', controllers.getProduct)
 
 //create update and delete data
 router.post('/products', restrict, controllers.createProduct)
