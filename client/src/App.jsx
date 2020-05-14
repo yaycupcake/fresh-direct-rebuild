@@ -1,20 +1,14 @@
 import React from 'react';
 import './App.scss';
-import { Route, Link } from "react-router-dom"
+import { Route } from "react-router-dom"
+import AdminHome from './Admin/AdminHome'
+import CustomerHome from './Customer/CustomerHome'
 
 function App() {
  return (
   <div className="App">
-   <header className="App-header">
-
-    <Route exact path="/">
-
-     <h1>customer home page</h1>
-    </Route>
-    <Route exact path="/admin">
-     <h1>admin panel</h1>
-    </Route>
-   </header>
+    <Route exact path="/" component={CustomerHome} />
+    <Route exact path="/admin" component={AdminHome} />
   </div>
  );
 }
