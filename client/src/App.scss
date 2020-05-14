@@ -1,0 +1,870 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+ --boring-green: #5fb069;
+ --white: #ffffff;
+ --black: #000000;
+ --grey: #8b8e8b;
+ --brownish-grey: #656565;
+ --warm-grey: #9b9595;
+ --silver: #c5cbc4;
+ --dark-sage: #507c50;
+ --dusty-orange: #f58136;
+ --pinkish-grey: #c4c4c4;
+ --dodger-blue: #4185f4;
+ --french-blue: #4367b1;
+ --boring-green-22: rgba(95, 176, 108, 0.22);
+ --reddish-grey: #787070;
+ --warm-grey-two: #938e8e;
+ --brown-grey: #787a64;
+ --brown-grey-two: #9a966d;
+ --moss-green: #6b9534;
+ --charcoal: #3c3d3c;
+ --dull-green: #5fa062;
+ --boring-green-two: #5fb06c;
+ --pinkish-grey-two: #c3c1c1;
+
+}
+
+ @mixin Text-Style-46 {
+  font-family: Roboto;
+  font-size: 72px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brown-grey-two);
+}
+
+@mixin Text-Style-70 {
+  font-family: Roboto;
+  font-size: 72px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-71 {
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-68 {
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-55 {
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-54 {
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--dull-green);
+}
+
+@mixin Text-Style-42 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--dusty-orange);
+}
+
+@mixin Text-Style-72 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brown-grey);
+}
+
+@mixin Text-Style-48 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-43 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-40 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-65 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-39 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-69 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-47 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--dark-sage);
+}
+
+@mixin Text-Style-36 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-63 {
+  font-family: Roboto;
+  font-size: 44px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--charcoal);
+}
+
+@mixin Text-Style-53 {
+  font-family: Roboto;
+  font-size: 44px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--dull-green);
+}
+
+@mixin Text-Style-34 {
+  font-family: Roboto;
+  font-size: 42px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--charcoal);
+}
+
+@mixin Text-Style-44 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-41 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-67 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-66 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brownish-grey);
+}
+
+@mixin Text-Style-45 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-38 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--boring-green);
+}
+
+@mixin Text-Style-29 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-35 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-37 {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-13 {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brown-grey-two);
+}
+
+@mixin Text-Style-32 {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--pinkish-grey);
+}
+
+@mixin Text-Style-31 {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-30 {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-27 {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-75 {
+  font-family: Roboto;
+  font-size: 27px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-74 {
+  font-family: Roboto;
+  font-size: 27px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-50 {
+  font-family: Roboto;
+  font-size: 27px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-64 {
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-58 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brown-grey);
+}
+
+@mixin Text-Style-16 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-6 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-73 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--grey);
+}
+
+@mixin Text-Style-52 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #413f3f;
+}
+
+@mixin Text-Style-51 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-10 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-49 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-24 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-33 {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-28 {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-12 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--dark-sage);
+}
+
+@mixin Text-Style-9 {
+  font-family: Roboto;
+  font-size: 19px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-18 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--dusty-orange);
+}
+
+@mixin Text-Style-76 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-8 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brown-grey);
+}
+
+@mixin Text-Style-57 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brownish-grey);
+}
+
+@mixin Text-Style-22 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-21 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--boring-green);
+}
+
+@mixin Text-Style-19 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-2 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--warm-grey);
+}
+
+@mixin Text-Style-5 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-3 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--grey);
+}
+
+@mixin Text-Style-56 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--boring-green-two);
+}
+
+@mixin Text-Style-25 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-11 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-26 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-61 {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-20 {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-60 {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-23 {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--pinkish-grey);
+}
+
+@mixin Text-Style-17 {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--boring-green);
+}
+
+@mixin Text-Style {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--silver);
+}
+
+@mixin Text-Style-7 {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-4 {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--brownish-grey);
+}
+
+@mixin Text-Style-15 {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black);
+}
+
+@mixin Text-Style-14 {
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-62 {
+  font-family: Roboto;
+  font-size: 9px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+@mixin Text-Style-59 {
+  font-family: Roboto;
+  font-size: 8px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+html {
+ box-sizing: border-box;
+ *, *:before, *:after {
+  box-sizing: inherit;
+ }
+}
