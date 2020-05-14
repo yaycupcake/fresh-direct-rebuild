@@ -1,5 +1,6 @@
 import React, { useState, setState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { createProduct } from '../../../../../week_2/monday/products-authentication/client/src/services/product'
 // import { createProduct } from "../services/product"
 
 export default function AddProduct() {
@@ -23,9 +24,13 @@ export default function AddProduct() {
   //this sets the product to the previous version of the product, but then overwrites the targeted key's value with the updated value
  }
 
- const handleSubmit = (event) => {
-
+ const handleSubmit = async (event) => {
+  event.preventDefault()
+  const created = await createProduct(ProductCreate)
+  setIsCreated(created)
  }
+
+ //still need to add a condition somewhere, if created is truthy then redirect to products listing page
 
  return (
   <div className="AddProduct">
