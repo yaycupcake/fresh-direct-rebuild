@@ -2,105 +2,103 @@ import React, { useState } from 'react'
 import './SignUp.css'
 import { signUp, signIn } from '../services/user'
 
-export default function SignUp() {
-  //setting initial states
-  const [form, setForm] = useState({
-    username: '',
-    email: '',
-    password: '',
-    passwordConfirmation: '',
-    isError: false,
-    errorMsg: ''
+export default function AdminSignUp() {
+ //setting initial states
+ const [form, setForm] = useState({
+  username: '',
+  email: '',
+  password: '',
+  passwordConfirmation: '',
+  isError: false,
+  errorMsg: ''
+ })
+
+ const handleChange = event => {
+  const { name, value } = event.target;
+  setForm({
+   ...form,
+   [name]: value
   })
+ }
 
-  const handleChange = event => {
-    const { name, value } = event.target;
+ const onSignUp = event => {
+  event.preventDefault()
+  const { history, setUser } = props
+
+  signUp(form)
+   .then(res => {
+    setUser(res.user)
+   })
+   .then(() => history.push('/'))
+   .catch(error => {
+    console.error(error)
     setForm({
-      ...form,
-      [name]: value
+
+
+     isError: true,
+     errorMsg: 'Signup details invalid',
+     email: '',
+     password: '',
+     passwordConfirmation: '',
+     username: ''
     })
+   })
+ }
+
+ const renderError = () => {
+  const { isError, errorMsg } = form
+  const toggleForm = isError ? 'danger' : ''
+  if (isError) {
+   return (
+    <button type="submit" className={toggleForm}>
+     {errorMsg}
+    </button>
+   )
+  } else {
+   return <button type="submit">Register New User</button>
   }
+ }
+ //Don't forget to add 'danger' class to CSS
 
-  const onSignUp = event => {
-    event.preventDefault()
-    const { history, setUser } = props
-
-    signUp(form)
-      .then(res => {
-        setUser(res.user)
-      })
-      .then(() => history.push('/'))
-      .catch(error => {
-        console.error(error)
-        setForm({
-
-
-          isError: true,
-          errorMsg: 'Signup details invalid',
-          email: '',
-          password: '',
-          passwordConfirmation: '',
-          username: ''
-        })
-      })
-  }
-
-  const renderError = () => {
-    const { isError, errorMsg } = form
-    const toggleForm = isError ? 'danger' : ''
-    if (isError) {
-      return (
-        <button type="submit" className={toggleForm}>
-          {errorMsg}
-        </button>
-      )
-    } else {
-      return <button type="submit">Register New User</button>
-    }
-  }
-  //Don't forget to add 'danger' class to CSS
-
-  return (
-    <>
-      <form className="login-form" onSubmit={onSignUp}>
-        <input
-          className="new-username"
-          placeholder='Username'
-          value={form.username}
-          name='username'
-          onChange={handleChange}
-          required
-        />
-        <input
-          className="new-email"
-          placeholder='Email'
-          value={form.email}
-          name='email'
-          onChange={handleChange}
-          required
-        />
-        <input
-          className="new-password"
-          type="password"
-          placeholder='Password'
-          value={form.password}
-          name='password'
-          onChange={handleChange}
-          required
-        />
-        <input
-          className="new-password-confirm"
-          type="password"
-          placeholder='Confirm Password'
-          value={form.passwordConfirmation}
-          name='passwordConfirmation'
-          onChange={handleChange}
-          required
-        />
-        <button type="submit" className="button">Register New User</button>
-      </form>
-    </>
-  )
+ return (
+  <>
+   <form className="login-form" onSubmit={onSignUp}>
+    <input
+     className="new-username"
+     placeholder='Username'
+     value={form.username}
+     name='username'
+     onChange={handleChange}
+     required
+    />
+    <input
+     className="new-email"
+     placeholder='Email'
+     value={form.email}
+     name='email'
+     onChange={handleChange}
+     required
+    />
+    <input
+     className="new-password"
+     type="password"
+     placeholder='Password'
+     value={form.password}
+     name='password'
+     onChange={handleChange}
+     required
+    />
+    <input
+     className="new-password-confirm"
+     type="password"
+     placeholder='Confirm Password'
+     value={form.passwordConfirmation}
+     name='passwordConfirmation'
+     onChange={handleChange}
+     required
+    />
+    <button type="submit" className="button">Register New User</button>
+   </form>
+  </>
+ )
 }
-
-export default AdminSignUp
