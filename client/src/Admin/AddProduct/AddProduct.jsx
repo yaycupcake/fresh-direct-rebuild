@@ -4,7 +4,7 @@ import { createProduct } from "../../services/product"
 import Layout from '../shared/Layout'
 
 
-export default function AddProduct() {
+export default function AddProduct(props) {
 
  const [product, setProduct] = useState({
   brand: "",
