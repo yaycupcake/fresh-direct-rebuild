@@ -13,9 +13,9 @@ const AdminHome = () => {
 
   useEffect(() => {
     const userEffect = async () => {
-      const user = await verifyUser() 
-      if (user) {
-        setUser(user)
+      const verifiedUser = await verifyUser() 
+      if (verifiedUser) {
+        setUser(verifiedUser.user)
       }
     }
       userEffect()
