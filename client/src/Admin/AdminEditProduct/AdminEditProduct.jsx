@@ -17,6 +17,7 @@ function AdminEditProduct(props) {
         imageUrls: ""
     })
 
+  const [created, setCreated] = useState ('')
 
     let { id } = useParams()
 
