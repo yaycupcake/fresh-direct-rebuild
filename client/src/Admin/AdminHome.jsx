@@ -7,7 +7,7 @@ import AdminEditProduct from './AdminEditProduct/AdminEditProduct'
 import AddProduct from './AddProduct/AddProduct'
 import AdminSignUp from './AdminSignUp/AdminSignUp'
 import AdminLogIn from './AdminLogIn/AdminLogIn'
-import SignOut from './SignOut/SignOut'
+import AdminSignOut from './AdminSignOut/AdminSignOut'
 import { verifyUser } from '../services/user'
 
 const AdminHome = () => {
@@ -32,7 +32,7 @@ const AdminHome = () => {
    <Route exact path="/admin/add-product" render={() => user ? <AddProduct user={user} /> : < Redirect to='/admin/sign-up' />} />
    <Route exact path="/admin/sign-up" render={props => <AdminSignUp setUser={setUser} history={props.history} />} />
    <Route exact path="/admin/sign-in" render={props => <AdminLogIn setUser={setUser} history={props.history} />} />
-   <Route exact path="/admin/sign-out" render={props => <SignOut user={user} clearUser={setUser} history={props.history} />} />
+   <Route exact path="/admin/sign-out" render={props => <AdminSignOut user={user} clearUser={setUser} history={props.history} />} />
   </Switch>
  )
 }
