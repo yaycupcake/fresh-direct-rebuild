@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
-// import { createProduct } from "../../services/product"
-//unsure where the services will live yet in relation to this file but adjust accordingly
+import { createProduct } from "../../services/product"
+
 
 export default function AddProduct() {
 
@@ -27,10 +27,11 @@ export default function AddProduct() {
 
  const handleSubmit = async (event) => {
   event.preventDefault()
-  // const created = await createProduct(ProductCreate)
-  const created = "test"
+  console.log(product)
+  const created = await createProduct(product)
+  // const created = "test"
   // above is for testing only
-  setIsCreated(created)
+  setIsCreated({ created })
  }
 
  if (isCreated) {
