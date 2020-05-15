@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getProduct, updateProduct } from '../services/product'
 
-function AdminEdit(props) {
-    const [input, updateInput] = useState('')
-    const [product, updateProduct] = useState({
+function AdminEditProduct() {
+    
+    const [product, setProduct] = useState({
         brand: '',
         productName: '',
         size: '',
@@ -15,12 +15,24 @@ function AdminEdit(props) {
     })
 
 
-    let { id } = useParams
+    
+
+    useEffect(() => {
+         let { id } = useParams
+         const product = await getProduct(id)
+         setProduct({ product })
+         
+    })
+
+    async function handleChange(event) {
+        const { name, value } =event.target
+        setProduct({...product, [name]: value})
+    }
 
     async function handleSubmit(event) {
         event.preventDefault();
-         const updateInput = await updateProduct(id, product);
-        updateInput(input);
+         const created = await updateProduct(id, product);
+        setCreated(created);
       }
 
 
@@ -30,61 +42,61 @@ function AdminEdit(props) {
                 <input
                     className="admin-update-brand"
                     placeholder="Brand"
-                    value={brand}
+                    value={product.brand}
                     name="brand"
                     required
-                    onChange={(event) => updateproduct(event.target.value)}
+                    onChange={handleChange}
                 />
                 <input
                     className="admin-update-productName"
                     placeholder="Product Name"
-                    value={productName}
+                    value={product.productName}
                     name="productName"
                     required
-                    onChange={(event) => updateproduct(event.target.value)}
+                    onChange={handleChange}
                 />
                 <input
                     className="admin-update-size"
                     placeholder="Size"
-                    value={size}
+                    value={product.size}
                     name="size"
                     required
-                    onChange={(event) => updateproduct(event.target.value)}
+                    onChange={handleChange}
                 />
                 <input
                     className="admin-update-price"
                     placeholder="price"
-                    value={price}
+                    value={product.price}
                     name="price"
                     required
-                    onChange={(event) => updateproduct(event.target.value)}
+                    onChange={handleChange}
                 />
                 <input
                     className="admin-update-unit"
                     placeholder="Unit"
-                    value={unit}
+                    value={product.unit}
                     name="unit"
                     required
-                    onChange={(event) => updateproduct(event.target.value)}
+                    onChange={handleChange}
                 />
                 <input
                     className="admin-update-category"
                     placeholder="Category"
-                    value={category}
+                    value={product.category}
                     name="category"
                     required
-                    onChange={(event) => updateproduct(event.target.value)}
+                    onChange={handleChange}
                 />
             </form>
             <form>
                 <input
                     className="admin-update-imageUrl"
                     placeholder='Image Url'
-                    value={imgUrl}
+                    value={product.imgUrl}
                     name='imgUrl'
                     type='text'
                     required
-                    onChange={(event) => updateProduct(event.target.value)}
+                    onChange={handleChange}
                 />
             </form>
             <button type="submit">Save</button>
@@ -92,4 +104,4 @@ function AdminEdit(props) {
         </div>
     )
 }
-export default AdminEdit 
+export default AdminEditProduct 
