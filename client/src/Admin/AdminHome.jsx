@@ -7,7 +7,7 @@ import AddProduct from './AddProduct'
 import AdminSignUp from './AdminSignUp'
 import AdminLogIn from './AdminLogIn'
 import SignOut from './SignOut'
-import { verifyUser } from './services/user'
+import { verifyUser } from '../services/user'
 
 const AdminHome = () => {
   const [user, setUser] = useState(null)
