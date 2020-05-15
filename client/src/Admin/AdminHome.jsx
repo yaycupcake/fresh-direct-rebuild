@@ -30,7 +30,7 @@ const AdminHome = () => {
       <Route exact path="/admin/add-product" render={() => user ? <AddProduct user={user} /> : < Redirect to='/admin/sign-up' />} />
       <Route exact path="/admin/sign-up" render={props => <AdminSignUp setUser={setUser} history={props.history} />} />
       <Route exact path="/admin/sign-in" render={props => <AdminLogIn setUser={setUser} history={props.history} />} />
-      <Route exact path="/admin/signout" render={props => <SignOut user={user} clearUser={setUser} history={props.history} />} />
+      <Route exact path="/admin/sign-out" render={props => <SignOut user={user} clearUser={setUser} history={props.history} />} />
     </Switch>
   )
 }
