@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { signOut } from '../services/user'
+import { signOut } from '../../services/user'
 
 const AdminSignOut = (props) => {
   useEffect(() => {

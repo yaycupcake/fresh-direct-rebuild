@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './SignUp.css'
+// import './SignUp.css'
 import { signUp, signIn } from '../../services/user'
 import Layout from '../shared/Layout'
 
