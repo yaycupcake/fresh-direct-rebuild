@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './SignUp.css'
 import { signUp, signIn } from '../../services/user'
+import Layout from '../shared/Layout'
 
 export default function AdminSignUp(props) {
  //setting initial states
@@ -61,7 +62,7 @@ export default function AdminSignUp(props) {
  //Don't forget to add 'danger' class to CSS
 
  return (
-  <>
+  <Layout user={props.user}>
    <form className="login-form" onSubmit={onSignUp}>
     <input
      className="new-username"
@@ -99,6 +100,6 @@ export default function AdminSignUp(props) {
     />
     <button type="submit" className="button">Register New User</button>
    </form>
-  </>
+  </Layout>
  )
 }
