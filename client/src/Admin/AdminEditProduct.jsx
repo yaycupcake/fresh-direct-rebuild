@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import { getProduct, updateProduct } from '../services/product'
+import Layout from '../shared/Layout'
 
 function AdminEditProduct() {
 
@@ -35,7 +36,8 @@ function AdminEditProduct() {
     }
 
 
-    return (
+  return (
+      <Layout user={props.user}>
         <div>
             <form onSubmit={handleSubmit}>
                 <input
@@ -100,7 +102,8 @@ function AdminEditProduct() {
             </form>
             <button type="submit">Save</button>
 
-        </div>
+      </div>
+      </Layout>
     )
 }
 export default AdminEditProduct 

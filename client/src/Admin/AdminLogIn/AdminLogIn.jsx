@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { signIn } from '../../services/user'
 //need to set up services. Should we have universal services or admin vs customer?
+import Layout from '../shared/Layout'
 
 export default function AdminLogIn(props) {
  //setting initial states
@@ -61,7 +62,7 @@ export default function AdminLogIn(props) {
  //Don't forget to add 'danger' class to CSS
 
  return (
-  <>
+  <Layout user={props.user}>
    <form className="login-form" onSubmit={onSignIn}>
     <input
      className="login-email"
@@ -82,6 +83,6 @@ export default function AdminLogIn(props) {
     />
     <button type="submit" className="button">Login</button>
    </form>
-  </>
+  </Layout>
  )
 }

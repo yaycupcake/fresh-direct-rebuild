@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { createProduct } from "../../services/product"
+import Layout from '../shared/Layout'
 
 
 export default function AddProduct() {
@@ -40,7 +41,8 @@ export default function AddProduct() {
  //change this to /admin/products or something later probably
 
 
- return (
+  return (
+   <Layout user={props.user}>
   <div className="AddProduct">
    <form
     className="add-product-form"
@@ -120,6 +122,7 @@ export default function AddProduct() {
    </button>
    </form>
 
-  </div>
+      </div>
+      </Layout>
  )
 }
