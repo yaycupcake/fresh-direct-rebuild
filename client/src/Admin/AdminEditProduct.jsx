@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getProduct, updateProduct } from '../services/product'
 
 function AdminEditProduct() {
-    
+
     const [product, setProduct] = useState({
         brand: '',
         productName: '',
@@ -15,25 +15,24 @@ function AdminEditProduct() {
     })
 
 
-    
+    let { id } = useParams()
 
     useEffect(() => {
-         let { id } = useParams
-         const product = await getProduct(id)
-         setProduct({ product })
-         
+        const product = await getProduct(id)
+        setProduct({ product })
+
     })
 
-    async function handleChange(event) {
-        const { name, value } =event.target
-        setProduct({...product, [name]: value})
+    function handleChange(event) {
+        const { name, value } = event.target
+        setProduct({ ...product, [name]: value })
     }
 
     async function handleSubmit(event) {
         event.preventDefault();
-         const created = await updateProduct(id, product);
+        const created = await updateProduct(id, product);
         setCreated(created);
-      }
+    }
 
 
     return (
