@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import './ProductCards.css';
 import ProductCard from './ProductCard'
 import { getProducts } from '../services/product'
+import Layout from '../Admin/shared/Layout'
 
 class ProductCards extends Component {
   constructor() {
@@ -23,12 +24,14 @@ class ProductCards extends Component {
     )
 
     return (
+      <Layout user={this.props.user}>
       <div className="product-cards">
         <div className="latest">LATEST</div>
         <div className="cards">
           {CARDS}
         </div>
       </div>
+      </Layout>
     )
   }
 }
