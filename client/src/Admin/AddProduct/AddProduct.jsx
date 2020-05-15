@@ -1,7 +1,7 @@
-import React, { useState, setState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import { createProduct } from '../../../../../week_2/monday/products-authentication/client/src/services/product'
-// import { createProduct } from "../services/product"
+// import { createProduct } from "../../services/product"
+//unsure where the services will live yet in relation to this file but adjust accordingly
 
 export default function AddProduct() {
 
@@ -16,7 +16,8 @@ export default function AddProduct() {
   category: "",
   imageUrls: ""
  })
- const [isCreated, setCreated] = useState(false)
+
+ const [isCreated, setIsCreated] = useState(null)
 
  const handleChange = (event) => {
   const { name, value } = event.target
@@ -26,11 +27,17 @@ export default function AddProduct() {
 
  const handleSubmit = async (event) => {
   event.preventDefault()
-  const created = await createProduct(ProductCreate)
+  // const created = await createProduct(ProductCreate)
+  const created = "test"
+  // above is for testing only
   setIsCreated(created)
  }
 
- //still need to add a condition somewhere, if created is truthy then redirect to products listing page
+ if (isCreated) {
+  return <Redirect to={`/`} />
+ }
+ //change this to /admin/products or something later probably
+
 
  return (
   <div className="AddProduct">
