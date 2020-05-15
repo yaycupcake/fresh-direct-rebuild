@@ -5,13 +5,13 @@ const Nav = ({ user }) => {
   const authenticatedOptions = (
     <>
         <NavLink className="link" to="/admin/add-product">Add Product</NavLink>
-        <NavLink className="link" to="/admin/signout">Sign Out</NavLink>
+        <NavLink className="link" to="/admin/sign-out">Sign Out</NavLink>
     </>
   )
   const unauthenticatedOptions = (
     <>
-        <NavLink className="link" to="/admin/signup">Sign Up</NavLink>
-        <NavLink className="link" to="/admin/login">Login</NavLink>
+        <NavLink className="link" to="/admin/sign-up">Sign Up</NavLink>
+        <NavLink className="link" to="/admin/sign-in">Login</NavLink>
     </>
   )
   const alwaysOptions = (
