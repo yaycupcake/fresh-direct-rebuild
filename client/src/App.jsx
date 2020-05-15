@@ -10,7 +10,7 @@ function App() {
    {/* <Route exact path="/" component={CustomerHome} /> */}
    <Route exact path="/">test homepage</Route>
    {/* above line is only temp until we work on customer homepage */}
-   <Route exact path="/admin" component={AdminHome} />
+   <Route path="/admin" component={AdminHome} />
   </div>
  );
 }
