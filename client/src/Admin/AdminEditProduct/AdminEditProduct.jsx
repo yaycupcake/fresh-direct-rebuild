@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import { getProduct, updateProduct } from '../services/product'
+import { getProduct, updateProduct } from '../../services/product'
 import Layout from '../shared/Layout'
 
 function AdminEditProduct() {
