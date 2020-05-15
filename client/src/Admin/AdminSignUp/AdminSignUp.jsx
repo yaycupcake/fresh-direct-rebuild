@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './SignUp.css'
-import { signUp, signIn } from '../services/user'
+import { signUp, signIn } from '../../services/user'
 
-export default function AdminSignUp() {
+export default function AdminSignUp(props) {
  //setting initial states
  const [form, setForm] = useState({
   username: '',
