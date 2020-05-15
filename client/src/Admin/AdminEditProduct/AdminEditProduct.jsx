@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getProduct, updateProduct } from '../../services/product'
 import Layout from '../shared/Layout'
 
-function AdminEditProduct() {
+function AdminEditProduct(props) {
 
     const [product, setProduct] = useState({
         brand: "",
