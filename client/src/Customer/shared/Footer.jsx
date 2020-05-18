@@ -4,6 +4,7 @@ import instagramIcons from '../../assets/icons/instagram-icons.png';
 import pintrestIcons from '../../assets/icons/pintrest-icons.png';
 import twitterIcons from '../../assets/icons/twitter-icons.png';
 import youtubeIcons from '../../assets/icons/youtube-icons.png';
+import './Footer.scss'
 
 
 export default function Footer() {
