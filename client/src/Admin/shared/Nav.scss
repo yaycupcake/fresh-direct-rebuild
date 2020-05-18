@@ -1,0 +1,28 @@
+.Nav {
+  border-bottom: 1px solid black;
+  height: 100px;
+  width: 100%;
+  margin: 15px 0;
+
+  .logo {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 10px;
+  }
+
+  .links {
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  .link {
+    text-decoration: none;
+    margin: 10px;
+  }
+
+  .welcome {
+    font-size: 12px;
+  }
+}
+

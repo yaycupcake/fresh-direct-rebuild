@@ -5,8 +5,8 @@ const AdminSignOut = (props) => {
   useEffect(() => {
     const { history, clearUser, user } = props
     signOut(user)
-            .then(() => clearUser(null))
-            .finally(() => history.push('/'))
+      .then(() => clearUser(null))
+      .finally(() => history.push('/admin'))
   }, [])
 
   return ''

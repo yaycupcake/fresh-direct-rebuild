@@ -7,6 +7,7 @@ import CustomerHome from './Customer/CustomerHome'
 // import CustomerHome from './Customer/CustomerHome'
 
 function App() {
+
  return (
   <div className="App">
    <Route exact path="/" component={CustomerHome} />
@@ -15,6 +16,7 @@ function App() {
    <Route path="/admin" component={AdminHome} />
   </div>
  );
+
 }
 
 export default App;
