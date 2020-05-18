@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './Nav.scss'
 
 const Nav = ({ user }) => {
   const authenticatedOptions = (
@@ -23,7 +24,7 @@ const Nav = ({ user }) => {
     <div className='Nav'>
       <NavLink className="logo" to="/admin">FreshDirect Admin</NavLink>
       <div className='links'>
-        {user && <div className="link welcome">Welcome, {user.username}</div>}
+        {user ? user && <div className="link welcome">Welcome, {user.username}</div> : <div className='link welcome'>Please log in or sign up</div>}
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
       </div>
