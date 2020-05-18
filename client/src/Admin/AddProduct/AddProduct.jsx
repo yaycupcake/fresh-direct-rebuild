@@ -37,7 +37,7 @@ export default function AddProduct(props) {
   }
 
   if (isCreated) {
-    return <Redirect to={`/`} />
+    return <Redirect to={`/admin/products/`} />
   }
   //change this to /admin/products or something later probably
 
