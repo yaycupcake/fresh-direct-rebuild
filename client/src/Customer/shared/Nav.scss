@@ -1,0 +1,66 @@
+.nav-bar{
+  background-color: var(--boring-green);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 10px;
+  align-items: center;
+
+  .logo{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+
+    img{
+      width:40vw;
+    }
+  }
+ .nav-icons{
+   
+  img{
+     margin: 1vw;
+     width:8vw;
+   }
+
+ span{
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+  padding-bottom: .5em;
+ }
+ }
+  .burger{
+    img{
+      width:8vw;
+      margin: 1vw;
+    }
+  }
+
+ .search{
+  width: 90vw;
+  background-color: white;
+  margin: 5vw;
+  display: flex;
+  align-content: stretch;
+
+
+
+
+  input{
+    width: 80vw;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--silver);
+    border: none;
+  }
+
+  img{
+    width: 10vw;
+  }
+ }
+}
