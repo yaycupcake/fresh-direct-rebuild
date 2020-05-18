@@ -868,3 +868,10 @@ html {
   box-sizing: inherit;
  }
 }
+
+
+.login-form {
+ button {
+  @include Text-Style-32;
+ }
+}
