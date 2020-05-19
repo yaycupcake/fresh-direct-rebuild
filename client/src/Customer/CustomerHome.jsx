@@ -5,14 +5,12 @@ import MessageCard from './components/MessageCard'
 import SplashImageCard from './components/SplashImageCard'
 import citrus from '../assets/images/citrus.jpg'
 import shelf from '../assets/images/shelf.jpg'
+import Layout from './shared/Layout'
 
 export default function CustomerHome() {
   return (
-    <div>
-      <Nav />
 
-
-
+    <Layout>
       <MessageCard img={citrus}
         title='Meals for a Good Cause'
         alt='citrus'
@@ -28,8 +26,6 @@ export default function CustomerHome() {
         title={`Help NYC's Most Vulnerable`}
         message={`We’re proud to partner with NY Common
        Pantry whose mission is to reduce hunger`} />
-       
-      <Footer />
-    </div>
+    </Layout>
   )
 }

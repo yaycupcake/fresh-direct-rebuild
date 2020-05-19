@@ -1,0 +1,10 @@
+.sign-in{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  button, input{
+  width: 70vw;
+  }
+}
