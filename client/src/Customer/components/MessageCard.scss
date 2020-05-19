@@ -1,0 +1,16 @@
+.MessageCard{
+    padding-bottom: 100px;
+    
+    img{
+        width: 100vw;
+        position: relative;
+        z-index: -1;
+
+    }
+
+    .Message{
+        margin: -100px auto;
+        z-index: 10;
+       
+    }
+}
