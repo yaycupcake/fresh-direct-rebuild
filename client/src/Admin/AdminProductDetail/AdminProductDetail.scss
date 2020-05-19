@@ -20,9 +20,15 @@
   color: white;
 }
 
+.delete {
+  padding: 10px;
+  background-color: red;
+  border-radius: 4px;
+  font-size: 20px;
+  color: white;
+}
+
 .image-form {
-  // display: flex;
-  // flex-direction: column;
   input, button {
     height: 24px;
   }

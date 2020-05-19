@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { Redirect } from 'react-router-dom'
 import Layout from '../shared/Layout'
-import { getProduct, updateProduct } from '../../services/product'
+import { getProduct, updateProduct, deleteProduct } from '../../services/product'
 import './AdminProductDetail.scss'
 
 export default function ProductDetail(props) {
   const [product, setProduct] = useState(null)
-  // 
+  
   const [imageUrls, setImageUrls] = useState([])
   const [newImage, setNewImage] = useState('')
+
   const [updated, didUpdate] = useState(false)
-  // 
+  const [deleted, didDelete] = useState(false)
+  
   const { id } = props.match.params
 
   useEffect(() => {
@@ -47,9 +50,18 @@ export default function ProductDetail(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log({ ...product, imageUrls: imageUrls });
-    const updated = await updateProduct(id, { ...product, imageUrls: imageUrls })
-    didUpdate({ updated })
+    const eventName = event.target.name
+    if (eventName === 'save') {
+      const updated = await updateProduct(id, { ...product, imageUrls: imageUrls })
+      didUpdate({ updated })
+    } else if (eventName === 'delete') {
+      const deleted = await deleteProduct(id)
+      didDelete({ deleted })
+    }
+  }
+
+  if (deleted) {
+    return <Redirect to={`/admin/products/`} />
   }
 
   return (
@@ -82,7 +94,7 @@ export default function ProductDetail(props) {
               )
             })}
           </div>
-          <form onSubmit={handleSubmit}>
+          <form >
             {Object.entries(product).map((productEntry, idx) => {
               const excludeFields = ['_id', '__v', 'createdAt', 'updatedAt', 'imageUrls']
               return (
@@ -104,7 +116,8 @@ export default function ProductDetail(props) {
                 </React.Fragment>
               )
             })}
-            <button type='submit' className='save'>Save</button>
+          <button type='submit' className='save' name='save' onClick={handleSubmit}>Save</button>
+          <button type='submit' className='delete' name='delete' onClick={handleSubmit}>Delete</button>
           </form>
         </div>
       }
