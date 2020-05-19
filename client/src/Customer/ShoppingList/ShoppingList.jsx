@@ -16,7 +16,7 @@ import React, { useState } from 'react'
             setValue(e.target.value)
             }} 
             value={value}/>
-            <input type="checkbox">Eggs</input>
+            
         </form>
         
     )
