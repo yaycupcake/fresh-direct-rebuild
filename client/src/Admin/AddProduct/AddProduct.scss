@@ -30,4 +30,41 @@
   .hide {
     display: none;
   }
+
+  .image-fields {
+    width: 250px;
+  }
+
+  .add-button {
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    padding: 10px 10px;
+    font-size: 13px;
+    margin: 10px;
+  }
+
+  .x-button {
+    height: 75%;
+    position: relative;
+    border-radius: 4px;
+    background-color: red;
+    color: white;
+    font-size: 13px;
+    padding: 10px 10px;
+    margin: 0 0 20px 0;
+  }
+
+  .input-image-urls {
+    width: 250px;
+    margin: 0 0 20px 0;
+  }
+
+  .image-fields {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+  }
 }

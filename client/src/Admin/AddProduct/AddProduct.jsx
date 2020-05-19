@@ -137,13 +137,13 @@ export default function AddProduct(props) {
             onChange={handleChange}
           /> */}
 
-          <button type="button" onClick={() => handleAddField()}>
+          <button type="button" className='add-button' onClick={() => handleAddField()}>
             Add Image URL
           </button>
 
           {fields.map((field, i) => {
             return (
-              <div className='adtl-fields' key={`${field}-${i}`}>
+              <div className='image-fields' key={`${field}-${i}`}>
                 <input
                   maxLength='255'
                   className='input-image-urls'
@@ -152,7 +152,7 @@ export default function AddProduct(props) {
                   onChange={e => handleChangeDynField(i, e)}
                   placeholder="Add Another Image URL"
                 />
-                <button type="button" onClick={() => handleRemove(i)}>
+                <button type="button" className="x-button" onClick={() => handleRemove(i)}>
                   x
             </button>
               </div>
