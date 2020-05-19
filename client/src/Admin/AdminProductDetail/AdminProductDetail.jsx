@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../shared/Layout'
-import { getProduct } from '../../services/product'
+import { getProduct, updateProduct } from '../../services/product'
 import './AdminProductDetail.scss'
 
 export default function ProductDetail(props) {
   const [product, setProduct] = useState(null)
+  const { id } = props.match.params
   useEffect(() => {
     const productEffect = async () => {
-      const { id } = props.match.params
       const productData = await getProduct(id)
       console.log(productData)
       if (productData) {
@@ -16,6 +16,20 @@ export default function ProductDetail(props) {
     }
     productEffect()
   }, [])
+
+//need to change to edited / isEdited?
+const [created, setCreated] = useState ('')
+
+function handleChange(event) {
+    const { name, value } = event.target
+    setProduct({ ...product, [name]: value })
+}
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    const created = await updateProduct(id, product);
+    setCreated(created);
+}
 
   const productInfo =
     <div className="product-info">
