@@ -16,10 +16,12 @@ export default function AddProduct(props) {
     salePrice: "",
     unitPrice: "",
     category: "",
-    imageUrls: ""
+    imageUrls: []
   })
 
   const [isCreated, setIsCreated] = useState(null)
+
+  const [fields, setFields] = useState([])
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -27,19 +29,37 @@ export default function AddProduct(props) {
     //this sets the product to the previous version of the product, but then overwrites the targeted key's value with the updated value
   }
 
+  function handleChangeDynField(i, event) {
+    const values = [...fields];
+    console.log(values)
+    values[i].values = event.target.value;
+    setFields(values);
+  }
+
+  function handleAddField() {
+    const values = [...fields];
+    values.push({values: null});
+    setFields(values);
+  }
+
+  function handleRemove(i) {
+    const values = [...fields];
+    values.splice(i, 1);
+    setFields(values);
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
+    console.log(fields)
+    fields.map(field => product.imageUrls.push(field.values))
     console.log(product)
     const created = await createProduct(product)
-    // const created = "test"
-    // above is for testing only
     setIsCreated({ created })
   }
 
   if (isCreated) {
     return <Redirect to={`/admin/products/`} />
   }
-  //change this to /admin/products or something later probably
 
 
   return (
@@ -108,21 +128,41 @@ export default function AddProduct(props) {
             name="category"
             onChange={handleChange}
           />
-          <input
+          {/* <input
             className="input-image-urls"
             placeholder="Image URLs"
             value={product.imageUrls}
             name="imageUrls"
             required
             onChange={handleChange}
-          />
-          <button
-            type="submit" className="submit-button"
-          >
-            Update
-   </button>
-        </form>
+          /> */}
 
+          <button type="button" onClick={() => handleAddField()}>
+            Add Image URL
+          </button>
+
+          {fields.map((field, i) => {
+            return (
+              <div className='adtl-fields' key={`${field}-${i}`}>
+                <input
+                  maxLength='255'
+                  className='input-image-urls'
+                  type="text"
+                  value={field.value} 
+                  onChange={e => handleChangeDynField(i, e)}
+                  placeholder="Add Another Image URL"
+                />
+                <button type="button" onClick={() => handleRemove(i)}>
+                  x
+            </button>
+              </div>
+            );
+          })}
+          <button
+            type="submit"
+            className="submit-button"
+          >Update Product</button>
+        </form>
       </div>
     </Layout>
   )

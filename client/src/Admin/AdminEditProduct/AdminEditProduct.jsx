@@ -16,7 +16,7 @@ function AdminEditProduct(props) {
         category: "",
         imageUrls: ""
     })
-
+//need to change to edited / isEdited?
   const [created, setCreated] = useState ('')
 
     let { id } = useParams()
