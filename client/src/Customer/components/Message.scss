@@ -2,9 +2,11 @@
 
 .Message{
 
-    background-color: pink;
+    background-color: var(--white);
     width: 312px;
     padding: 20px;
+   
+    
 
     a{
         text-transform: uppercase;
@@ -29,7 +31,7 @@
         letter-spacing: normal;
         color: var(--black);
         text-transform: uppercase;
-        padding: 0;
+        padding: 0 ;
         margin: 0;
     }
 
