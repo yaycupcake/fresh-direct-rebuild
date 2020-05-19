@@ -1,0 +1,18 @@
+.login-form {
+
+ display: flex;
+ flex-direction: column;
+
+ .new-username {
+  color: var(--dodger-blue);
+ }
+
+ input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  width: 40%;
+}
+
+}
+
