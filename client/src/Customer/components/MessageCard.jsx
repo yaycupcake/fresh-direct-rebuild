@@ -1,15 +1,15 @@
 import React from 'react'
 import Message from './Message'
-import citrusImg from '../../assets/images/citrus.jpg'
+// import citrusImg from '../../assets/images/citrus.jpg'
 import './MessageCard.scss'
 
-export default function MessageCard() {
+export default function MessageCard(props) {
     return (
         <div className="MessageCard">
             {/* <div className="imageContainer"> */}
-            <img src={citrusImg} alt="citrus" />
+            <img src={props.img} alt={props.alt} />
             {/* </div> */}
-            <Message />
+            <Message title={props.title} message={props.message}/>
         </div>
     )
 }
