@@ -27,13 +27,13 @@ const AdminHome = () => {
 
   return (
     <Switch>
-      <Route exact path='/admin/products' render={() => { return <ProductCards user={user} /> }} />
-      <Route exact path='/admin/products/:id' render={(props) => <ProductDetail {...props} user={user} history={props.history} />} />
+      <Route exact path='/admin/products' render={() => user ? <ProductCards user={user} /> : <Redirect to='/admin/sign-in' /> } />
+      <Route exact path='/admin/products/:id' render={(props) => user ? <ProductDetail {...props} user={user} history={props.history} /> : <Redirect to='/admin/sign-in' />} />
       <Route exact path="/admin/products/:id/edit" render={(props) => user ? <AdminEditProduct {...props} user={user} /> : <Redirect to='/admin' />} />
       <Route exact path="/admin/add-product" render={() => user ? <AddProduct user={user} /> : < Redirect to='/admin/sign-up' />} />
       <Route exact path="/admin/sign-up" render={props => <AdminSignUp setUser={setUser} history={props.history} />} />
       <Route exact path="/admin/sign-in" render={props => <AdminLogIn setUser={setUser} history={props.history} />} />
-      <Route exact path="/admin/sign-out" render={props => <AdminSignOut user={user} clearUser={setUser} history={props.history} />} />
+      <Route exact path="/admin/sign-out" render={props => user ? <AdminSignOut user={user} clearUser={setUser} history={props.history} /> : <Redirect to='/admin' />} />
       <Route exact path='/admin' render={() => <Layout user={user}>Home</Layout>} />
     </Switch>
   )
