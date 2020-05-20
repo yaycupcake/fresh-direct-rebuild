@@ -4,8 +4,9 @@ import ProductCards from '../../../Reusable/ProductCards'
 
 export default function HomeBody(props) {
   return (
-    <div>
-      <ProductCards feature={props.feature}/>
+    <div className='home-body'>
+      <ProductCards feature={props.feature} />
+      <button className="view-all">View All</button>
     </div>
   )
 }

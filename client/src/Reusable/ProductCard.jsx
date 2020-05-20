@@ -9,14 +9,15 @@ const ProductCard = (props) => {
     <div className="product-card">
       <Link className="card" to={isAdmin ? `/admin/products/${props._id}` : `/products/${props._id}`}>
         <div className='container'>
-        <img className="product-card-image" src={props.imageUrl} alt={props.productName} />
-        <span className='brand'>{props.product.brand}</span>
-        <span className='product'>{props.product.productName}</span>
-        <span className='misc'></span>
-        <span>
-          <span className='price-size'>${props.product.price} {props.product.size}</span>
-          <span className='unit-price'>{props.product.unitPrice}</span>
-        </span>
+          <img className="product-card-image" src={props.imageUrl} alt={props.productName} />
+          <span className='brand'>{props.product.brand}</span>
+          <span className='product'>{props.product.productName}</span>
+          <span className='misc'></span>
+          <span>
+            <span className='price-size'>${props.product.price} {props.product.size}</span>
+            {props.product.unitPrice ? <span className='unit-price'>{props.product.unitPrice}</span> : null}
+
+          </span>
         </div>
         {isAdmin &&
           <div className="product-card-name">{props.productName} | View and Edit</div>}

@@ -60,6 +60,9 @@
 }
 
 .unit-price {
+  &:before {
+    content: ' $'
+  }
   font-family: Roboto;
   font-weight: medium;
   font-size: 10px;
