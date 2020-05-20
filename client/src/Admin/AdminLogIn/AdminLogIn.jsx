@@ -62,7 +62,6 @@ export default function AdminLogIn(props) {
   //Don't forget to add 'danger' class to CSS
 
   return (
-    <Layout user={props.user}>
       <form className="login-form" onSubmit={onSignIn}>
         <input
           className="login-email"
@@ -83,6 +82,5 @@ export default function AdminLogIn(props) {
         />
         <button type="submit" className="button">Login</button>
       </form>
-    </Layout>
   )
 }

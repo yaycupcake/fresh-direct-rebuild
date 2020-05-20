@@ -44,7 +44,6 @@ function AdminEditProduct(props) {
 
 
     return (
-        <Layout user={props.user}>
             <div>
                 <form onSubmit={handleSubmit}>
                     <input
@@ -110,7 +109,6 @@ function AdminEditProduct(props) {
                 <button type="submit">Save</button>
 
             </div>
-        </Layout>
     )
 }
 export default AdminEditProduct 

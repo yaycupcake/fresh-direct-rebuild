@@ -1,5 +1,5 @@
 import React from 'react'
-import foodTable from '../../assets/images/food-table.jpg'
+import foodTable from '../../../assets/images/food-table.jpg'
 import './SplashImageCard.scss'
 
 export default function SplashImageCard() {
