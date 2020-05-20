@@ -65,7 +65,7 @@ export default function ProductDetail(props) {
   }
 
   return (
-    <Layout user={props.user}>
+    <div user={props.user}>
       {updated && <h4>Product Updated</h4>}
       {product &&
         <div className="product-info">
@@ -121,6 +121,6 @@ export default function ProductDetail(props) {
           </form>
         </div>
       }
-    </Layout>
+    </div>
   )
 }

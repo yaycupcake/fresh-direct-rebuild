@@ -63,7 +63,6 @@ export default function AddProduct(props) {
 
 
   return (
-    <Layout user={props.user}>
       <div className="AddProduct">
         <form
           className="add-product-form"
@@ -164,6 +163,5 @@ export default function AddProduct(props) {
           >Update Product</button>
         </form>
       </div>
-    </Layout>
   )
 }

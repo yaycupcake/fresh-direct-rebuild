@@ -1,5 +1,5 @@
 import React from 'react'
-import Message from './Message'
+import Message from '../Message/Message'
 // import citrusImg from '../../assets/images/citrus.jpg'
 import './MessageCard.scss'
 
