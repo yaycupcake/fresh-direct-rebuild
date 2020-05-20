@@ -19,3 +19,17 @@
   font-size: 20px;
   color: white;
 }
+
+.delete {
+  padding: 10px;
+  background-color: red;
+  border-radius: 4px;
+  font-size: 20px;
+  color: white;
+}
+
+.image-form {
+  input, button {
+    height: 24px;
+  }
+}
