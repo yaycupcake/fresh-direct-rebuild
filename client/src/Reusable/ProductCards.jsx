@@ -29,14 +29,14 @@ class ProductCards extends Component {
 
     const FEATURE_CARDS = this.state.products.map((product, index) => {
       if (index <= 1) {
-        return <ProductCard _id={product._id} productName={product.productName} imageUrl={product.imageUrls[0]} key={index} />
+        return <ProductCard product={product} _id={product._id} productName={product.productName} imageUrl={product.imageUrls[0]} key={index} />
       }
     }
     )
 
     const FEATURE_CARDS_2 = this.state.products.map((product, index) => {
       if (index >= 2 && index <= 3 ) {
-        return <ProductCard _id={product._id} productName={product.productName} imageUrl={product.imageUrls[0]} key={index} />
+        return <ProductCard product={product} _id={product._id} productName={product.productName} brand={product.brand} imageUrl={product.imageUrls[0]} key={index} />
       }
     }
     )
