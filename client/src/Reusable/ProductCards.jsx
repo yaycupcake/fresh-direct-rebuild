@@ -45,7 +45,7 @@ class ProductCards extends Component {
   
 
     const CARDS = this.state.products.reverse().map((product, index) =>
-      <ProductCard _id={product._id} productName={product.productName} imageUrl={product.imageUrls[0]} key={index} />
+      <ProductCard product={product} _id={product._id} productName={product.productName} brand={product.brand} imageUrl={product.imageUrls[0]} key={index} />
     )
 
     return (

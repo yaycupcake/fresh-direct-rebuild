@@ -20,7 +20,7 @@ const ProductCard = (props) => {
           </span>
         </div>
         {isAdmin &&
-          <div className="product-card-name">{props.productName} | View and Edit</div>}
+          <div className="product-card-name">View and Edit</div>}
       </Link>
     </div>
   )
