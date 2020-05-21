@@ -52,6 +52,26 @@
   color: var(--black);
 }
 
+.burst {
+  margin: 0;
+  z-index: 999;
+  h2 {
+    margin:0;
+  }
+}
+
+
+.shopping-cart {
+  width: 30%;
+  height: auto;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0;
+}
+
 .price-size {
   font-family: Roboto;
   font-weight: bold;

@@ -1,0 +1,39 @@
+.overlay {
+  color: white;
+  font-size: 6px;
+  z-index: 999;
+  position: relative;
+  right: 1px;
+  top: 2px;
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+
+.burst {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  text-align: center;
+  background: var(--boring-green);
+  margin: 20px;
+}
+
+.burst::before, .burst::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background: var(--boring-green);
+}
+
+.burst::before {
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.burst::after {
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
