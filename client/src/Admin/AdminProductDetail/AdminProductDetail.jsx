@@ -120,8 +120,10 @@ export default function ProductDetail(props) {
                 </React.Fragment>
               )
             })}
-            <button type='submit' className='save' name='save' onClick={handleSubmit}>Save</button>
-            <button type='submit' className='delete' name='delete' onClick={handleSubmit}>Delete</button>
+          <div className="button-box">
+            <button type='submit' className='save' name='save' onClick={handleSubmit}>SAVE</button>
+            <button type='submit' className='delete' name='delete' onClick={handleSubmit}>DELETE</button>
+            </div>
           </form>
         </div>
       }
