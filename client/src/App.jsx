@@ -14,6 +14,7 @@ function App() {
    <div className="App">
      <Switch>
       <Route exact path="/" component={CustomerHome} />
+      <Route exact path="/sign-in" component={SignIn} />
       {/* <Route exact path="/">test homepage</Route> */}
       {/* above line is only temp until we work on customer homepage */}
       <Route path='/products/:id' component={CustomerProduct} />
