@@ -3,6 +3,8 @@ import './App.scss';
 import { Route, Switch } from "react-router-dom"
 import AdminHome from './Admin/AdminHome'
 import CustomerHome from './Customer/CustomerHome'
+
+import SignIn from './Customer/components/SignIn'
 import CustomerProduct from './Customer/CustomerProduct';
 import CustomerList from './Customer/CustomerList'
 

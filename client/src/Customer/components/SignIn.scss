@@ -1,0 +1,56 @@
+.sign-in{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 1em;
+  .input{
+   display:flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+
+   input{
+     height: 56px;
+     width: 70vw;
+     margin: .5em 0;
+     padding: 0 1em;
+     border: 1px solid black;
+     //Text-style-5
+     font-family: Roboto;
+     font-size: 18px;
+     font-weight: 500;
+     font-stretch: normal;
+     font-style: normal;
+     line-height: normal;
+     letter-spacing: normal;
+     color: var(--silver);
+   }
+  }
+
+  >div:not(.orLine) {
+  width: 70vw;
+  margin: 1em 0;
+  img{
+    width: 70vw;
+  }
+ }
+ .orLine{
+   img{
+   width: 95vw;
+  }
+ }
+
+ .forgot{
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--pinkish-grey);
+  text-decoration: none;
+  margin-bottom: 1em;
+ }
+}
