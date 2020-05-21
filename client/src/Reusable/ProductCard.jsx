@@ -1,6 +1,7 @@
 import React from 'react';
 import './ProductCard.scss';
 import { Link, withRouter } from 'react-router-dom'
+import addCart from '../assets/icons/addCart.png'
 
 const ProductCard = (props) => {
   console.log(props)
@@ -21,6 +22,8 @@ const ProductCard = (props) => {
         </div>
         {isAdmin &&
           <div className="product-card-name">View and Edit</div>}
+        {!isAdmin &&
+          <div className='cart-container'><img className='shopping-cart' src={addCart} /></div>}
       </Link>
     </div>
   )
