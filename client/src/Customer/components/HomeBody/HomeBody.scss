@@ -16,4 +16,44 @@ margin: 15px 0 30px 0;
   font-weight: medium;
 }
 
+.overlay {
+  color: white;
+  font-size: 8px;
+  z-index: 999;
+  position: absolute;
+  right: 5px;
+  top: -5px;
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+
+.burst {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  background: var(--boring-green);
+  margin: 20px;
+}
+
+.burst::before, .burst::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background: var(--boring-green);
+}
+
+.burst::before {
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.burst::after {
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
 }

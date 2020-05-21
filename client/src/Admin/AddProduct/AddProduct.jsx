@@ -160,7 +160,7 @@ export default function AddProduct(props) {
           <button
             type="submit"
             className="submit-button"
-          >Update Product</button>
+          >Save New Product</button>
         </form>
       </div>
   )
