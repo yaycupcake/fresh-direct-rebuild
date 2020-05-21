@@ -1,4 +1,7 @@
 import React from 'react'
+import './Counter.scss'
+import minusIcon from '../../../assets/icons/minus-icon.png'
+import plusIcon from '../../../assets/icons/plus-icon.png'
 
 /*
   Counter (Reusable)
@@ -16,9 +19,9 @@ export default function Counter({quantity, setQuantity}) {
   }
   return (
     <div className='counter'>
-      <button className="counter-minus" onClick={updateQuantity}>-</button>
-      <input type="text" value={quantity} readOnly/>
-      <button className="counter-plus" onClick={updateQuantity}>+</button>
+      <button className="counter-minus" onClick={updateQuantity}><img className='plusminus' src={minusIcon} /></button>
+      <input className='amount' type="text" value={quantity} readOnly/>
+        <button className="counter-plus" onClick={updateQuantity}><img className='plusminus'src={plusIcon} /></button>
     </div>
   )
 }

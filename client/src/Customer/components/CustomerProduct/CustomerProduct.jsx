@@ -32,9 +32,9 @@ export default function CustomerProduct(props) {
       {product && 
         <div className="product-detail">
           <Carousel images={product.imageUrls} />
-          <h4 className='product-price'>Total: ${total}</h4>
-          <Counter quantity={quantity} setQuantity={setQuantity} />
-          <button>Add To Cart</button>
+          <h4 className='product-price'>Total: <span className='money'>${total}</span></h4>
+          <Counter className='counter' quantity={quantity} setQuantity={setQuantity} />
+          <button className='bob'>Add To Cart</button>
           <div className="product-detail-message"></div>
         </div>
       }

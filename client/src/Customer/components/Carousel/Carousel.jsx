@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Carousel.scss'
 
 export default function Carousel({ images }) {
   const [mainImg, setMainImg] = useState(images[0])
@@ -10,7 +11,7 @@ export default function Carousel({ images }) {
 
   return (
     <div className="product-images">
-      <img src={mainImg} height='200' alt='' />
+      <img className='main-img' src={mainImg} alt='' />
       <div className="product-thumbnails">
         {images.map((image, index, imgsArr) => {
           return (
@@ -19,7 +20,7 @@ export default function Carousel({ images }) {
                 src={image}
                 width='100'
                 alt=''
-                className={`product-image-${index}`}
+                className={`product-image-${index} carousel-img`} 
                 onClick={thumbnailClick}
               />
               {imgsArr[index+1] && <div className='thumbnail-vr'></div>}
