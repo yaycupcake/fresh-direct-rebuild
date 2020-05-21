@@ -9,8 +9,7 @@ import deliver from '../../assets/icons/deliver.png'
 
 export default function Message(props) {
   return (
-    <Layout>
-      <div className="sign-in">
+    <div className="sign-in">
 
         <div className='deliver'>
           <img src={deliver} alt='Deliver Icon' />
@@ -44,7 +43,6 @@ export default function Message(props) {
           <img src={google} alt='Google Icon' />
         </div>
 
-      </div>
-    </Layout>
+    </div>
   )
 }
