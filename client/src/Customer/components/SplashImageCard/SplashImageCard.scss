@@ -1,8 +1,13 @@
 .SplashImageCard{
     padding-bottom: 44vw;
+
+    @media screen and (min-width:650px){
+        max-width: 312px;
+        margin: 0 27px;
+    }
     
     img{
-        width: 100vw;
+        width: 100%;
     }
 
     div{
@@ -14,6 +19,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media screen and (min-width:650px){
+            max-width: 312px;
+            max-height: 100px;
+            margin: -120px auto;
+        }
 
         h3{
             width: 174px;
