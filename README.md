@@ -43,8 +43,10 @@ Fresh Direct Rebuild is a collaboration with a UX/UI team to build a full stack 
 <img src="https://user-images.githubusercontent.com/61858219/82616750-1ce20780-9b9c-11ea-8f58-0404e0171f25.png" >
 </details>
 
+</br>
 
-#### MVP 
+#### MVP
+
 
 ##### MOBILE VIEW 
 
