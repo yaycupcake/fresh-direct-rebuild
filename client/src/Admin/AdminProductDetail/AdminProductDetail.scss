@@ -58,12 +58,15 @@
   color: white;
   font-size: 16px;
   font-weight: bold;
-  position: absolute;
+  position: relative;
+  bottom: 115px;
+  left: 105px;
 }
 
 .product-image {
   border: 1px dashed black;
   width: 135px;
+  height: 105px;
   padding: 0 15px;
   margin: 20px 20px;
 }
