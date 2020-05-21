@@ -4,13 +4,14 @@ import truckIcons from '../../assets/icons/truck-icons.png';
 import logo from '../../assets/icons/logo.png';
 import search from '../../assets/icons/search.png';
 import burger from '../../assets/icons/burger.png';
+import Burg from './Burg'
 import './Nav.scss'
 
 export default function Nav() {
   return (
     <nav className='nav-bar'>
       <div className='burger'>
-        <img src={burger} alt="Burger Icon" />
+        <Burg />
       </div>
 
       <div className='logo'>
