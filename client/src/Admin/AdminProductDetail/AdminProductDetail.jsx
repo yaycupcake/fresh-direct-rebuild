@@ -73,7 +73,6 @@ export default function ProductDetail(props) {
           <h1>Product Details: {`${product.brand} ${product.productName}`}</h1>
           <h3>Images</h3>
           <form className='image-form' onSubmit={addImage}>
-            <label>Add Image</label>
             <div className='input-line'>
               <input
                 id='add-image'
@@ -92,7 +91,7 @@ export default function ProductDetail(props) {
                 <React.Fragment key={`image${idx}`}>
                   <div className="product-image">
                     <img src={image} width='100' height='100' />
-                    <button className='x-button'id={`delete-image-${idx}`} onClick={deleteImage}>x</button>
+                    <button className='delete-image-button'id={`delete-image-${idx}`} onClick={deleteImage}>x</button>
                   </div>
                 </React.Fragment>
               )
