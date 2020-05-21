@@ -6,13 +6,13 @@ import './AdminProductDetail.scss'
 
 export default function ProductDetail(props) {
   const [product, setProduct] = useState(null)
-  
+
   const [imageUrls, setImageUrls] = useState([])
   const [newImage, setNewImage] = useState('')
 
   const [updated, didUpdate] = useState(false)
   const [deleted, didDelete] = useState(false)
-  
+
   const { id } = props.match.params
 
   useEffect(() => {
@@ -54,6 +54,7 @@ export default function ProductDetail(props) {
     if (eventName === 'save') {
       const updated = await updateProduct(id, { ...product, imageUrls: imageUrls })
       didUpdate({ updated })
+      window.scrollTo(0, 0);
     } else if (eventName === 'delete') {
       const deleted = await deleteProduct(id)
       didDelete({ deleted })
@@ -66,21 +67,24 @@ export default function ProductDetail(props) {
 
   return (
     <div user={props.user}>
-      {updated && <h4>Product Updated</h4>}
+      {updated && <h4 className="updated">Product Updated</h4>}
       {product &&
         <div className="product-info">
           <h1>Product Details: {`${product.brand} ${product.productName}`}</h1>
           <h3>Images</h3>
           <form className='image-form' onSubmit={addImage}>
             <label>Add Image</label>
-            <input
-              id='add-image'
-              placeholder='Image URL'
-              value={newImage}
-              onChange={handleImageUrl}
-              required
-            />
-            <button>+</button>
+            <div className='input-line'>
+              <input
+                id='add-image'
+                className="image-input"
+                placeholder='Image URL'
+                value={newImage}
+                onChange={handleImageUrl}
+                required
+              />
+              <button className='image-button'>Add Image</button>
+            </div>
           </form>
           <div className="product-images">
             {imageUrls && imageUrls.map((image, idx) => {
@@ -88,7 +92,7 @@ export default function ProductDetail(props) {
                 <React.Fragment key={`image${idx}`}>
                   <div className="product-image">
                     <img src={image} width='100' height='100' />
-                    <button id={`delete-image-${idx}`} onClick={deleteImage}>x</button>
+                    <button className='x-button'id={`delete-image-${idx}`} onClick={deleteImage}>x</button>
                   </div>
                 </React.Fragment>
               )
@@ -104,7 +108,7 @@ export default function ProductDetail(props) {
                       <label className='info-line'>
                         {productEntry[0]}:
                         <input
-                        className="info-field"
+                          className="info-field"
                           name={productEntry[0]}
                           value={productEntry[1]}
                           type="text"
@@ -116,8 +120,8 @@ export default function ProductDetail(props) {
                 </React.Fragment>
               )
             })}
-          <button type='submit' className='save' name='save' onClick={handleSubmit}>Save</button>
-          <button type='submit' className='delete' name='delete' onClick={handleSubmit}>Delete</button>
+            <button type='submit' className='save' name='save' onClick={handleSubmit}>Save</button>
+            <button type='submit' className='delete' name='delete' onClick={handleSubmit}>Delete</button>
           </form>
         </div>
       }
