@@ -1,0 +1,11 @@
+.product-detail {
+  margin: 10px auto;
+  .product-thumbnails {
+    display: flex;
+    align-items: center;
+    .thumbnail-vr {
+      border-left: 1px solid rgb(205, 206, 178); 
+      height: 100px;
+    }
+  }
+}

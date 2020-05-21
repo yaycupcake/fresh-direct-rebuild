@@ -1,45 +1,131 @@
 import React, { useState, useEffect } from 'react'
+import { Redirect } from 'react-router-dom'
 import Layout from '../shared/Layout'
-import { getProduct } from '../../services/product'
+import { getProduct, updateProduct, deleteProduct } from '../../services/product'
 import './AdminProductDetail.scss'
 
 export default function ProductDetail(props) {
   const [product, setProduct] = useState(null)
+
+  const [imageUrls, setImageUrls] = useState([])
+  const [newImage, setNewImage] = useState('')
+
+  const [updated, didUpdate] = useState(false)
+  const [deleted, didDelete] = useState(false)
+
+  const { id } = props.match.params
+
   useEffect(() => {
     const productEffect = async () => {
-      const { id } = props.match.params
       const productData = await getProduct(id)
-      console.log(productData)
       if (productData) {
         setProduct(productData)
+        setImageUrls(productData.imageUrls)
       }
     }
     productEffect()
   }, [])
 
-  const productInfo =
-    <div className="product-info">
-      <div className='current-image'>
-        <h1>Product Details</h1>
-        <ul className="info-list">
-          <li className='info-line'>Brand: <input value={product && product.brand} className="info-field" type="text" /></li>
-          <li className='info-line'>Name: <input value={product && product.productName} className="info-field" type="text" /></li>
-          <li className='info-line'>Size: <input value={product && product.size} className="info-field" type="text" /></li>
-          <li className='info-line'>Price: <input value={product && product.price} className="info-field" type="text" /></li>
-          <li className='info-line'>Unit: <input value={product && product.unit} className="info-field" type="text" /></li>
-          <li className='info-line'>Sale Price: <input value={product && product.salePrice} className="info-field" type="text" /></li>
-          <li className='info-line'>Unit Price: <input value={product && product.unitPrice} className="info-field" type="text" /></li>
-          <li className='info-line'>Category: <input value={product && product.category} className="info-field" type="text" /></li>
-          <li className='info-line'>Image URLs: <input value={product && product.imageUrls} className="info-field" type="text" /></li>
-        </ul>
-        <button type='submit' className='save'>Save</button>
-      </div>
-      <div className='thumbnail-container'></div>
-    </div>
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setProduct({ ...product, [name]: value })
+  }
+
+  const addImage = async (event) => {
+    event.preventDefault()
+    await setImageUrls([...imageUrls, newImage])
+    setNewImage('')
+  }
+
+  const deleteImage = async (event) => {
+    event.preventDefault()
+    const iurls = imageUrls
+    iurls.splice(event.target.id.split('-')[2], 1)
+    await setImageUrls([...iurls])
+  }
+
+  const handleImageUrl = (event) => {
+    setNewImage(event.target.value)
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const eventName = event.target.name
+    if (eventName === 'save') {
+      const updated = await updateProduct(id, { ...product, imageUrls: imageUrls })
+      didUpdate({ updated })
+      window.scrollTo(0, 0);
+    } else if (eventName === 'delete') {
+      const deleted = await deleteProduct(id)
+      didDelete({ deleted })
+    }
+  }
+
+  if (deleted) {
+    return <Redirect to={`/admin/products/`} />
+  }
 
   return (
-    <Layout user={props.user}>
-      {product && productInfo}
-    </Layout>
+    <div user={props.user}>
+      {updated && <h4 className="updated">Product Updated</h4>}
+      {product &&
+        <div className="product-info">
+          <h1>Product Details: {`${product.brand} ${product.productName}`}</h1>
+          <h3>Images</h3>
+          <form className='image-form' onSubmit={addImage}>
+            <div className='input-line'>
+              <input
+                id='add-image'
+                className="image-input"
+                placeholder='Image URL'
+                value={newImage}
+                onChange={handleImageUrl}
+                required
+              />
+              <button className='image-button'>Add Image</button>
+            </div>
+          </form>
+          <div className="product-images">
+            {imageUrls && imageUrls.map((image, idx) => {
+              return (
+                <React.Fragment key={`image${idx}`}>
+                  <div className="product-image">
+                    <img src={image} width='100' height='100' />
+                    <button className='delete-image-button'id={`delete-image-${idx}`} onClick={deleteImage}>x</button>
+                  </div>
+                </React.Fragment>
+              )
+            })}
+          </div>
+          <form >
+            {Object.entries(product).map((productEntry, idx) => {
+              const excludeFields = ['_id', '__v', 'createdAt', 'updatedAt', 'imageUrls']
+              return (
+                <React.Fragment key={`${idx}`}>
+                  {!excludeFields.includes(productEntry[0]) &&
+                    <>
+                      <label className='info-line'>
+                        {productEntry[0]}:
+                        <input
+                          className="info-field"
+                          name={productEntry[0]}
+                          value={productEntry[1]}
+                          type="text"
+                          onChange={handleChange}
+                        />
+                      </label>
+                    </>
+                  }
+                </React.Fragment>
+              )
+            })}
+          <div className="button-box">
+            <button type='submit' className='save' name='save' onClick={handleSubmit}>SAVE</button>
+            <button type='submit' className='delete' name='delete' onClick={handleSubmit}>DELETE</button>
+            </div>
+          </form>
+        </div>
+      }
+    </div>
   )
 }
