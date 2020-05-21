@@ -18,10 +18,10 @@ export default function Burg() {
 
   return (
     <Menu className='dropdown'>
-      <a id="home" className="menu-item-frame" href="/"><img id='menu-logo' src={logo} /></a>
-      <a id="shop" className="menu-item" href="/shop"><img src={home} />Shop</a>
-      <a id="about" className="menu-item" href="/about"><img src={reorder} />Reorder</a>
-      <a id="more" className="menu-item" href="/more"><img src={shop} />More Ways to Shop</a>
+      <a id="home" className="menu-item-frame" href="/"><img className='icon-size' id='menu-logo' src={logo} /></a>
+      <a id="shop" className="menu-item" href="/shop"><img className='icon-size' src={home} />Shop</a>
+      <a id="about" className="menu-item" href="/about"><img className='icon-size' src={reorder} />Reorder</a>
+      <a id="more" className="menu-item" href="/more"><img className='icon-size' src={shop} />More Ways to Shop</a>
       <a onClick={showSettings} className="menu-item--small" href="">Settings</a>
       <a id="contact" className="menu-item" href="/contact">Contact Us</a>
       <a id="help" className="menu-item" href="/help">Help</a>
