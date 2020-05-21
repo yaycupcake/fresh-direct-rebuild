@@ -10,7 +10,8 @@ const ProductCard = (props) => {
   return (
     <div className="product-card">
       <Link className="card" to={isAdmin ? `/admin/products/${props._id}` : `/products/${props._id}`}>
-      <div className="burst"><Burst msg="test"/></div>
+        {!isAdmin &&
+          <div className="burst"><Burst msg="test" /></div>}
         <div className='container'>
           <img className="product-card-image" src={props.imageUrl} alt={props.productName} />
           <span className='brand'>{props.product.brand}</span>
