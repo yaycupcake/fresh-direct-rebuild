@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './AdminSignUp.scss'
 import { signUp, signIn } from '../../services/user'
-import Layout from '../shared/Layout'
 
 export default function AdminSignUp(props) {
   //setting initial states
@@ -46,23 +45,22 @@ export default function AdminSignUp(props) {
       })
   }
 
-  const renderError = () => {
-    const { isError, errorMsg } = form
-    const toggleForm = isError ? 'danger' : ''
-    if (isError) {
-      return (
-        <button type="submit" className={toggleForm}>
-          {errorMsg}
-        </button>
-      )
-    } else {
-      return <button type="submit">Register New User</button>
-    }
-  }
+  // const renderError = () => {
+  //   const { isError, errorMsg } = form
+  //   const toggleForm = isError ? 'danger' : ''
+  //   if (isError) {
+  //     return (
+  //       <button type="submit" className={toggleForm}>
+  //         {errorMsg}
+  //       </button>
+  //     )
+  //   } else {
+  //     return <button type="submit">Register New User</button>
+  //   }
+  // }
   //Don't forget to add 'danger' class to CSS
 
   return (
-    <Layout user={props.user}>
       <form className="login-form" onSubmit={onSignUp}>
         <input
           className="new-username"
@@ -100,6 +98,5 @@ export default function AdminSignUp(props) {
         />
         <button type="submit" className="button">Register New User</button>
       </form>
-    </Layout>
   )
 }

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import './ProductCards.css';
 import ProductCard from './ProductCard'
 import { withRouter } from 'react-router-dom'
 import { getProducts } from '../services/product'
-// import Layout from '../Admin/shared/Layout'
 import './ProductCards.scss'
 
 class ProductCards extends Component {
@@ -19,13 +17,9 @@ class ProductCards extends Component {
     this.setState({ products })
   }
 
-  
-
   render() {
 
     const isAdmin = this.props.match.path.includes('admin') ? true : false
-
-    console.log(this.props)
 
     const FEATURE_CARDS = this.state.products.map((product, index) => {
       if (index <= 1) {
@@ -51,7 +45,6 @@ class ProductCards extends Component {
     return (
 
       <div className="product-cards">
-        {/* <div className="category">CATEGORY: need to add category logic</div> */}
         <div className="cards">
           {isAdmin ? CARDS : selectedFeatureCards}
         </div>

@@ -1,43 +1,22 @@
-import React from 'react'
-import Footer from './shared/Footer'
-import Nav from './shared/Nav'
-import MessageCard from './components/MessageCard/MessageCard'
-import SplashImageCard from './components/SplashImageCard/SplashImageCard'
-import citrus from '../assets/images/citrus.jpg'
-import shelf from '../assets/images/shelf.jpg'
-import './CustomerHome.scss'
-
+import React, { useState } from 'react'
+import { Switch, Route } from 'react-router-dom'
+import CustomerMain from './components/CustomerMain/CustomerMain'
+import CustomerProduct from './components/CustomerProduct/CustomerProduct'
+import CustomerList from './components/CustomerList/CustomerList'
+import SignIn from './components/SignIn'
 import Layout from './shared/Layout'
 
-import HomeBody from '../Customer/components/HomeBody/HomeBody'
-
-
 export default function CustomerHome() {
+  const [cart, updateCart] = useState([])
+
   return (
-
     <Layout>
-      <div className="customer-home">
-      <MessageCard img={citrus}
-        title='Meals for a Good Cause'
-        alt='citrus'
-        message='These hearty, homestyle entrees, veggies,
-      and soups from Restaurant Associates
-      Kitchen are more than just a great, fully-
-      prepped meal option. For every meal'/>
-
-      <HomeBody feature='top'/>
-
-      <SplashImageCard />
-
-      <HomeBody feature='bottom'/>
-
-      <MessageCard img={shelf}
-        alt='shelf'
-        title={`Help NYC's Most Vulnerable`}
-        message={`We’re proud to partner with NY Common
-       Pantry whose mission is to reduce hunger`} />
-      </div>
+      <Switch>
+        <Route exact path="/" component={CustomerMain} />
+        <Route exact path="/sign-in" component={SignIn} />
+        <Route path='/products/:id' render={(props) => <CustomerProduct {...props} updateCart={updateCart} />} />
+        <Route path='/:category' component={CustomerList} />
+        </Switch>
     </Layout>
-
   )
 }

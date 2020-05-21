@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Nav from './shared/Nav'
-import Footer from './shared/Footer'
-import { getProduct } from '../services/product'
-import Counter from './components/Counter/Counter'
-import Carousel from './components/Carousel/Carousel'
+import { getProduct } from '../../../services/product'
+import Counter from '../Counter/Counter'
+import Carousel from '../Carousel/Carousel'
 import './CustomerProduct.scss'
 
 export default function CustomerProduct(props) {
@@ -31,8 +29,7 @@ export default function CustomerProduct(props) {
 
   return (
     <div>
-      <Nav />
-        {product && 
+      {product && 
         <div className="product-detail">
           <Carousel images={product.imageUrls} />
           <h4 className='product-price'>Total: ${total}</h4>
@@ -40,8 +37,7 @@ export default function CustomerProduct(props) {
           <button>Add To Cart</button>
           <div className="product-detail-message"></div>
         </div>
-        }
-      <Footer />
+      }
     </div>
   )
 }
