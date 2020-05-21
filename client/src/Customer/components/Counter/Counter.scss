@@ -1,0 +1,43 @@
+.counter {
+  display: flex;
+
+  .counter-minus {
+    border-radius: 0;
+    width: 86px;
+    height: 41px;
+    background: transparent;
+    margin: 5px;
+
+  }
+
+  .counter-plus {
+    border-radius: 0;
+    width: 86px;
+    height: 41px;
+    background: transparent;
+    margin: 5px;
+  }
+
+  .amount {
+    width: 122px;
+    height: 41px;
+    align-self: center;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--black)
+
+  }
+
+  .plusminus {
+    width: 40%;
+    height: auto;
+  }
+
+
+}
