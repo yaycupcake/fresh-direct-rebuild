@@ -52,6 +52,15 @@
   color: var(--black);
 }
 
+.burst {
+  margin: 0;
+  z-index: 999;
+  h2 {
+    margin:0;
+  }
+}
+
+
 .shopping-cart {
   width: 30%;
   height: auto;
