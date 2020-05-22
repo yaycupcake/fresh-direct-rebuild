@@ -32,7 +32,7 @@ export default function CustomerCart(props) {
                   </div>
                 <div className="product-quantity">
                   <button className="product-delete-btn">Delete</button>
-                  <Counter quantity={quantity} />
+                  <Counter quantity={quantity} setQuantity={() => {}} />
                   <p className="product-price">${product.price}</p>
                 </div>
                 </div>
