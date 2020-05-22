@@ -125,6 +125,18 @@
       color: var(--silver);
     }
 
+    .promo-button {
+      background: transparent;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: var(--grey);
+    }
+
     span {
       display: flex;
       input {
@@ -140,9 +152,23 @@
     flex-direction: column;
     .checkout-cost {
       align-self: flex-end;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: var(--brownish-grey);
     }
     .checkout-btn {
-      align-self: stretch;
+      width: 70vw;
+      height: 15vw;
+      background-color: var(--dusty-orange);
+      color: white;
+      font-family: roboto;
+      font-size: 24px;
+      font-weight: bold;
     }
   }
 }
