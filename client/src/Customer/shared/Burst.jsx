@@ -2,7 +2,7 @@ import React from 'react'
 import './Burst.scss'
 
 export default function Burst(props) {
-  console.log(props)
+  // console.log(props)
   return (
     <div>
       <div className='burst'>

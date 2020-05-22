@@ -5,7 +5,7 @@ import addCart from '../assets/icons/addCart.png'
 import Burst from '../Customer/shared/Burst'
 
 const ProductCard = (props) => {
-  console.log(props)
+  // console.log(props)
   const isAdmin = props.match.path.includes('admin') ? true : false
   return (
     <div className="product-card">
