@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { signIn } from '../../services/user'
 import './AdminLogin.scss'
-import Layout from '../shared/Layout'
 
 export default function AdminLogIn(props) {
   //setting initial states
@@ -45,24 +44,23 @@ export default function AdminLogIn(props) {
       })
   }
 
-  const renderError = () => {
-    //destructuring to add form. before isError and errorMsg
-    const { isError, errorMsg } = form
-    const toggleForm = isError ? 'danger' : ''
-    if (isError) {
-      return (
-        <button type="submit" className={toggleForm}>
-          {errorMsg}
-        </button>
-      )
-    } else {
-      return <button type="submit">Sign In</button>
-    }
-  }
+  // const renderError = () => {
+  //   //destructuring to add form. before isError and errorMsg
+  //   const { isError, errorMsg } = form
+  //   const toggleForm = isError ? 'danger' : ''
+  //   if (isError) {
+  //     return (
+  //       <button type="submit" className={toggleForm}>
+  //         {errorMsg}
+  //       </button>
+  //     )
+  //   } else {
+  //     return <button type="submit">Sign In</button>
+  //   }
+  // }
   //Don't forget to add 'danger' class to CSS
 
   return (
-    <Layout user={props.user}>
       <form className="login-form" onSubmit={onSignIn}>
         <input
           className="login-email"
@@ -83,6 +81,5 @@ export default function AdminLogIn(props) {
         />
         <button type="submit" className="button">Login</button>
       </form>
-    </Layout>
   )
 }

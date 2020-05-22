@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-// import './ProductCards.css';
 import ProductCard from './ProductCard'
+import { withRouter } from 'react-router-dom'
 import { getProducts } from '../services/product'
-import Layout from '../Admin/shared/Layout'
 import './ProductCards.scss'
 
 class ProductCards extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       products: []
     }
@@ -20,21 +19,38 @@ class ProductCards extends Component {
 
   render() {
 
+    const isAdmin = this.props.match.path.includes('admin') ? true : false
+
+    const FEATURE_CARDS = this.state.products.map((product, index) => {
+      if (index <= 1) {
+        return <ProductCard product={product} _id={product._id} productName={product.productName} imageUrl={product.imageUrls[0]} key={index} />
+      }
+    }
+    )
+
+    const FEATURE_CARDS_2 = this.state.products.map((product, index) => {
+      if (index >= 2 && index <= 3 ) {
+        return <ProductCard product={product} _id={product._id} productName={product.productName} brand={product.brand} imageUrl={product.imageUrls[0]} key={index} />
+      }
+    }
+    )
+
+    const selectedFeatureCards = this.props.feature === 'top' ? FEATURE_CARDS : FEATURE_CARDS_2
+  
+
     const CARDS = this.state.products.reverse().map((product, index) =>
-      <ProductCard _id={product._id} productName={product.productName} imageUrl={product.imageUrls[0]} key={index} />
+      <ProductCard product={product} _id={product._id} productName={product.productName} brand={product.brand} imageUrl={product.imageUrls[0]} key={index} />
     )
 
     return (
-      <Layout user={this.props.user}>
+
       <div className="product-cards">
-        <div className="category">CATEGORY: need to add category logic</div>
         <div className="cards">
-          {CARDS}
+          {isAdmin ? CARDS : selectedFeatureCards}
         </div>
       </div>
-      </Layout>
     )
   }
 }
 
-export default ProductCards
+export default withRouter(ProductCards)

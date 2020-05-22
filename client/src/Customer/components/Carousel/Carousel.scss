@@ -1,0 +1,13 @@
+.product-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-img {
+  align-self: center;
+  width: 95vw;
+}
+
+.carousel-img {
+  margin: 0 10px;
+}

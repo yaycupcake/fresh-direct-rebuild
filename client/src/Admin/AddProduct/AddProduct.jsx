@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { createProduct } from "../../services/product"
-import Layout from '../shared/Layout'
 import './AddProduct.scss'
 
 
@@ -26,7 +25,6 @@ export default function AddProduct(props) {
   const handleChange = (event) => {
     const { name, value } = event.target
     setProduct({ ...product, [name]: value })
-    //this sets the product to the previous version of the product, but then overwrites the targeted key's value with the updated value
   }
 
   function handleChangeDynField(i, event) {
@@ -63,7 +61,6 @@ export default function AddProduct(props) {
 
 
   return (
-    <Layout user={props.user}>
       <div className="AddProduct">
         <form
           className="add-product-form"
@@ -128,14 +125,6 @@ export default function AddProduct(props) {
             name="category"
             onChange={handleChange}
           />
-          {/* <input
-            className="input-image-urls"
-            placeholder="Image URLs"
-            value={product.imageUrls}
-            name="imageUrls"
-            required
-            onChange={handleChange}
-          /> */}
 
           <button type="button" className='add-button' onClick={() => handleAddField()}>
             Add Image URL
@@ -161,9 +150,8 @@ export default function AddProduct(props) {
           <button
             type="submit"
             className="submit-button"
-          >Update Product</button>
+          >Save New Product</button>
         </form>
       </div>
-    </Layout>
   )
 }

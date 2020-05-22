@@ -1,35 +1,22 @@
-import React from 'react'
-import Footer from './shared/Footer'
-import Nav from './shared/Nav'
-import MessageCard from './components/MessageCard'
-import SplashImageCard from './components/SplashImageCard'
-import citrus from '../assets/images/citrus.jpg'
-import shelf from '../assets/images/shelf.jpg'
+import React, { useState } from 'react'
+import { Switch, Route } from 'react-router-dom'
+import CustomerMain from './components/CustomerMain/CustomerMain'
+import CustomerProduct from './components/CustomerProduct/CustomerProduct'
+import CustomerList from './components/CustomerList/CustomerList'
+import SignIn from './components/SignIn'
+import Layout from './shared/Layout'
 
 export default function CustomerHome() {
+  const [cart, updateCart] = useState([])
+
   return (
-    <div>
-      <Nav />
-
-
-
-      <MessageCard img={citrus}
-        title='Meals for a Good Cause'
-        alt='citrus'
-        message='These hearty, homestyle entrees, veggies,
-      and soups from Restaurant Associates
-      Kitchen are more than just a great, fully-
-      prepped meal option. For every meal'/>
-
-      <SplashImageCard />
-
-      <MessageCard img={shelf}
-        alt='shelf'
-        title={`Help NYC's Most Vulnerable`}
-        message={`We’re proud to partner with NY Common
-       Pantry whose mission is to reduce hunger`} />
-       
-      <Footer />
-    </div>
+    <Layout>
+      <Switch>
+        <Route exact path="/" component={CustomerMain} />
+        <Route exact path="/sign-in" component={SignIn} />
+        <Route path='/products/:id' render={(props) => <CustomerProduct {...props} updateCart={updateCart} />} />
+        <Route path='/:category' component={CustomerList} />
+        </Switch>
+    </Layout>
   )
 }

@@ -1,67 +1,103 @@
 .nav-bar{
-  background-color: var(--boring-green);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-top: 10px;
-  align-items: center;
-
-  .logo{
-    width: 50vw;
+    background-color: var(--boring-green);
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 10px;
+    align-items: center;
 
-    img{
-      width:40vw;
+    @media screen and (min-width:1000px){
+      height: auto;
     }
-  }
- .nav-icons{
-   
-  img{
-     margin: 1vw;
-     width:8vw;
-   }
 
- span{
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--white);
-  padding-bottom: .5em;
- }
- }
-  .burger{
-    img{
+    .logo{
+      width: 50vw;
+      display: flex;
+      justify-content: center;
+
+      img{
+        width:40vw;
+      }
+      @media screen and (min-width:1000px){
+        width: 33vw;
+        order: -2;
+        justify-content: flex-start;
+
+
+        img{
+          width: 10vw;
+          margin-left: 5vw;
+        }
+      }
+
+    }
+    .nav-icons{
+     @media screen and (min-width:1000px){
+      display: flex;
+      justify-content: flex-end;
+      width: 33vw;
+     }
+      img{
+        margin: 1vw;
+        width:8vw;
+     
+        @media screen and (min-width:1000px){
+          width: 3vw;
+        }
+      }
+
+      span{
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: var(--white);
+        padding-bottom: .5em;
+      }
+    }
+    .burger{ 
       width:8vw;
       margin: 1vw;
+      @media screen and (min-width: 1000px){
+       position: absolute;
+       top: 0em;
+       left: 0em;
+      }
     }
-  }
 
- .search{
-  width: 90vw;
-  background-color: white;
-  margin: 5vw;
-  display: flex;
-  align-content: stretch;
+    .search{
+      width: 90vw;
+      background-color: white;
+      margin: 5vw;
+      display: flex;
+      align-content: stretch;
 
+      @media screen and (min-width:1000px){
+        width: 34vw;
+        margin: 0;
+        order: -1;
+      }
 
-
-
-  input{ //text style 7 I believe
-    width: 80vw;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--silver);
-    border: none;
-    padding: 0 1em;
-  }
-
-  img{
-    width: 10vw;
-  }
- }
+      input{ //text style 7 I believe
+        width: 80vw;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--silver);
+        border: none;
+        padding: 0 1em;
+       }
+       
+       img{
+        width: 10vw;
+       }
+       @media screen and (min-width: 1000px){
+        width: 30vw;
+        img{
+         width: 3vw;
+        }
+       }
+    }
 }

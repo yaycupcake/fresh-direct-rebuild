@@ -12,14 +12,14 @@ const Nav = ({ user }) => {
   )
   const unauthenticatedOptions = (
     <>
-        <NavLink className="link" to="/admin/sign-up">Sign Up</NavLink>
-        <NavLink className="link" to="/admin/sign-in">Login</NavLink>
+      <NavLink className="link" to="/admin/sign-up">Sign Up</NavLink>
+      <NavLink className="link" to="/admin/sign-in">Login</NavLink>
     </>
   )
-  
+
   return (
     <div className='Nav'>
-      <NavLink className="logo" to="/admin">FreshDirect Admin</NavLink>
+      <NavLink className="logo" to="/admin/products">FreshDirect Admin</NavLink>
       <div className='links'>
         {user ? user && <div className="link welcome">Welcome, {user.username}</div> : <div className='link welcome'>Please log in or sign up</div>}
         {user ? authenticatedOptions : unauthenticatedOptions}
