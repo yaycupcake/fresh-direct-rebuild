@@ -5,6 +5,8 @@ import Carousel from '../Carousel/Carousel'
 import './CustomerProduct.scss'
 
 export default function CustomerProduct(props) {
+  // console.log(props);
+  
   const { id } = props.match.params
   const [product, setProduct] = useState(null)
   const [quantity, setQuantity] = useState(1)
@@ -27,6 +29,10 @@ export default function CustomerProduct(props) {
     }
   }, [quantity])
 
+  const addProduct = () => {
+     props.addToCart({product, quantity})
+  }
+
   return (
     <div>
       {product && 
@@ -34,7 +40,7 @@ export default function CustomerProduct(props) {
           <Carousel images={product.imageUrls} />
           <h4 className='product-price'>Total: <span className='money'>${total}</span></h4>
           <Counter className='counter' quantity={quantity} setQuantity={setQuantity} />
-          <button className='bob'>Add To Cart</button>
+          <button className='bob' onClick={addProduct}>Add To Cart</button>
           <div className="product-detail-message"></div>
         </div>
       }
