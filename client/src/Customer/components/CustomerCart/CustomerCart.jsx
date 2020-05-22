@@ -13,7 +13,7 @@ export default function CustomerCart(props) {
   
   return (
     <div className='customer-cart'>
-      {cart.length >= 1 ? <h3 className='cart-heading'>Your Cart</h3> : <h3 className='cart-heading'>Your Cart Is Empty.</h3>}
+      {cart.length >= 1 ? <h3 className='cart-heading'>Your Cart</h3> : <h3 className='empty-cart-heading'>Your Cart Is Empty</h3>}
       {(cart && cart.length >= 1) &&
         <>
           <p className='cart-note'>Please review your cart before checking out.</p>
@@ -31,8 +31,8 @@ export default function CustomerCart(props) {
                     </Link>
                   </div>
                 <div className="product-quantity">
-                  <button className="product-delete-btn">Delete</button>
-                  <Counter quantity={quantity} setQuantity={() => {}} />
+                  <button className="product-delete-btn">X</button>
+                  <Counter className='counter' quantity={quantity} setQuantity={() => {}} />
                   <p className="product-price">${product.price}</p>
                 </div>
                 </div>
@@ -41,14 +41,15 @@ export default function CustomerCart(props) {
             <button className="empty-cart">Empty Cart</button>
           </div>
           <div className="promotional-code">
-          <p>Have a promotional code?</p>
-            <span>
+          <p className='promo-header'>Promotional Code</p>
+            <span className='promo-span'>
             <input
+              className='promo-input'
               placeholder='Enter Here'
               value=''
               readOnly
             />
-              <button>Apply</button>
+              <button className='promo-button'>Apply</button>
             </span>
           </div>
           <div className="cart-checkout">
