@@ -5,7 +5,7 @@ export default function Carousel({ images }) {
   const [mainImg, setMainImg] = useState(images[0])
 
   const thumbnailClick = (event) => {
-    const index = event.target.className.split('-')[2]
+    const index = event.target.className.split(' ')[0].split('-')[2]
     setMainImg(images[index])
   }
 

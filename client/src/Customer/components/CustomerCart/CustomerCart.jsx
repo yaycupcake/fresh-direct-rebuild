@@ -4,15 +4,12 @@ import Counter from '../Counter/Counter'
 import './CustomerCart.scss'
 
 export default function CustomerCart(props) {
-  console.log(props);
   const { cart } = props
-  console.log(cart);
-
   const [totalCost, setTotalCost] = useState(0)
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  }, [])
+  // }, [])
   
   return (
     <div className='customer-cart'>
@@ -36,7 +33,7 @@ export default function CustomerCart(props) {
                 <div className="product-quantity">
                   <button className="product-delete-btn">Delete</button>
                   <Counter quantity={quantity} />
-                  <p className="product-price-each">${product.price}/ea</p>
+                  <p className="product-price">${product.price}</p>
                 </div>
                 </div>
               )

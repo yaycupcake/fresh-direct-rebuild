@@ -5,8 +5,6 @@ import Carousel from '../Carousel/Carousel'
 import './CustomerProduct.scss'
 
 export default function CustomerProduct(props) {
-  // console.log(props);
-  
   const { id } = props.match.params
   const [product, setProduct] = useState(null)
   const [quantity, setQuantity] = useState(1)
