@@ -32,10 +32,11 @@
 
     }
     .nav-icons{
+     display: flex;
      @media screen and (min-width:1000px){
-      display: flex;
       justify-content: flex-end;
       width: 33vw;
+      flex-direction: row;
      }
       img{
         margin: 1vw;
@@ -55,7 +56,11 @@
         line-height: normal;
         letter-spacing: normal;
         color: var(--white);
-        padding-bottom: .5em;
+        padding-bottom: .5em;        
+        align-self: center;
+        @media screen and (min-width:1000px){
+         padding: 20 0px;
+        }
       }
     }
     .burger{ 
